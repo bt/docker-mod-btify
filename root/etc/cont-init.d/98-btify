@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# Install packages
+echo "**** Installing packages ****"
+apt-get update && apt-get install -y vim
+
+# Installing ngrok
+echo "**** Installing ngrok ****"
+ARCH=`arch`
+NGROK_URL="https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz"
+if [[ $ARCH == "aarch64" ]]; then
+    NGROK_URL="https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.tgz"
+fi
+( cd /usr/local/bin && curl -s -L $NGROK_URL | sudo tar xzvf - )

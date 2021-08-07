@@ -3,7 +3,7 @@ name: Build Image
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  ENDPOINT: "bt/docker-mod-btify"
+  ENDPOINT: "bertramtruong/docker-mod-btify"
   BRANCH: "master"
 
 jobs:

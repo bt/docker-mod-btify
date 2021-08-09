@@ -12,3 +12,8 @@ if [[ $ARCH == "aarch64" ]]; then
     NGROK_URL="https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.tgz"
 fi
 ( cd /usr/local/bin && curl -s -L $NGROK_URL | sudo tar xzvf - )
+
+# Install Tailscale
+# - will require post-installation steps
+echo "**** Installing Tailscale ****"
+curl -L "https://raw.githubusercontent.com/tailscale/tailscale/main/scripts/installer.sh" | sh
